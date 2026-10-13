@@ -4,18 +4,15 @@
   "initialDelaySeconds": 5,
   "showDurationSeconds": 20,
   "repeatEverySeconds": 10,
-
   "countdown": {
     "enabled": true,
     "seconds": 20,
     "autoCloseAtZero": true
   },
-
   "behavior": {
     "selectionMode": "random",
     "refreshConfigBeforeShow": true
   },
-
   "overlay": {
     "enabled": true,
     "scrimColor": "#D1000000",
@@ -23,7 +20,6 @@
     "gravity": "center",
     "paddingDp": 0
   },
-
   "ads": [
     {
       "id": "ad_image_01",
@@ -32,7 +28,7 @@
         {
           "type": "image",
           "enabled": true,
-          "src": "https://boktoss2345.github.io/Video-Editor-Creator-Cut-Trim-Music-Filters-278314/assets/image45465.png",
+          "src": "https://boktoss2345.github.io/Media-Video-Creator-Montage-Editor-7878/assets/image45465.png",
           "widthPercent": 94,
           "maxWidthDp": 760,
           "contentScale": "fit",
@@ -65,7 +61,6 @@
         }
       ]
     },
-
     {
       "id": "ad_video_02",
       "enabled": true,
@@ -73,7 +68,7 @@
         {
           "type": "video",
           "enabled": true,
-          "src": "https://boktoss2345.github.io/Video-Editor-Creator-Cut-Trim-Music-Filters-278314/assets/video1565fs.mp4",
+          "src": "https://boktoss2345.github.io/Media-Video-Creator-Montage-Editor-7878/assets/video1565fs.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true,
@@ -110,7 +105,6 @@
         }
       ]
     },
-
     {
       "id": "ad_image_03",
       "enabled": true,
@@ -118,7 +112,7 @@
         {
           "type": "video",
           "enabled": true,
-          "src": "https://boktoss2345.github.io/Video-Editor-Creator-Cut-Trim-Music-Filters-278314/assets/video584585.mp4",
+          "src": "https://boktoss2345.github.io/Media-Video-Creator-Montage-Editor-7878/assets/video584585.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true,
