@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#10121a">
-  <title>Toca Boca Life Vacation</title>
+  <title>Toca Boca Life City</title>
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; width: 100%; min-height: 100%; background: #10121a; color: #fff; font-family: system-ui,sans-serif; }
@@ -19,25 +19,28 @@
 </head>
 <body>
   <main>
-    <div class="spinner" aria-hidden="true"></div>
-    <p id="status" role="status">Opening Toca Boca Life Vacation…</p>
-    <a id="openGame" href="https://www.madkidgames.com/full/toca-boca-life-vacation" target="_top">Open game</a>
+    <div id="spinner" class="spinner" aria-hidden="true"></div>
+    <p id="status" role="status">Opening Toca Boca Life City…</p>
+    <a id="openGame" href="https://www.madkidgames.com/full/toca-boca-life-city" target="_top">Open game</a>
+    <a href="https://www.madkidgames.com/full/toca-boca-life-city" target="_blank" rel="noopener noreferrer">Open in a new tab ↗</a>
     <noscript><p>Select Open game to continue.</p></noscript>
   </main>
   <!-- The JSON stays in this file. The first game opens directly in the same tab. -->
   <script id="games-json" type="application/json">
-  [
-    {
-      "title": "Toca Boca Life Vacation",
-      "embed": "https://www.madkidgames.com/full/toca-boca-life-vacation",
-      "image": "https://www.madkidgames.com/games/toca-boca-life-vacation/thumb_2.jpg",
-      "tags": "kids,kid,toca,toca-boca,toca-life,toca-vacation,toca-kids,kids-toca,kid-toca,toca-kid",
-      "description": "Play Toca Boca Life Vacation free online and create unforgettable holiday adventures with airports, beaches, hotels, and hidden island mysteries. A creative sandbox role-playing game where you travel, explore exciting vacation destinations, and create endless holiday stories with dozens of interactive characters.\n\nToca Boca Life Vacation is a creative sandbox adventure where every trip becomes a brand-new story. Play free online in your browser and experience the excitement of traveling through airports, relaxing at luxury hotels, exploring sunny beaches, and uncovering mysterious island secrets.\n\nStart your vacation at the bustling airport. Scan luggage through the X-ray machine, check in for your flight, visit the airplane cockpit, grab a snack during your journey, and enjoy every step of your travel adventure before arriving at your dream destination.\n\nAfter landing, check into your hotel and settle into your vacation home. Enjoy delicious meals at the hotel buffet, explore every room, ride the elevator to the luxurious penthouse suite, and relax while taking in breathtaking views from the top floor.\n\nSpend your days exploring the beautiful beach where you can swim, surf above ocean creatures, search for hidden treasures buried in the sand, and enjoy countless fun outdoor activities. Every location is filled with interactive objects that encourage creativity and imaginative storytelling.\n\nTake a stroll along the lively boardwalk where you can shop for souvenirs, take fun vacation photos, enjoy tasty snacks, and discover entertaining attractions. Keep exploring because hidden secrets, mysterious statues, and underwater surprises are waiting to be found throughout the island.\n\nCreate your own adventures with 34 unique characters, each ready to participate in funny, relaxing, or exciting vacation stories. Mix characters between locations, invent family holidays, sightseeing trips, beach parties, hotel adventures, and much more with no rules or time limits.\n\nEvery object can be picked up, moved, combined, or interacted with, allowing players to create completely unique stories every time they play. Your imagination is the only limit.\n\nWith colorful visuals, charming animations, hidden secrets, and endless role-playing possibilities, Toca Boca Life Vacation delivers a relaxing and creative experience for players of all ages.\n\nDesigned as a smooth HTML5 experience, Toca Boca Life Vacation runs directly in your browser on desktop and mobile devices. Whether you're searching for free browser sandbox games, unblocked role-playing games, or family-friendly creative adventures online, this title offers endless vacation fun anytime, anywhere.\n\nPack your bags, board your flight, and create your dream holiday in Toca Boca Life Vacation!\n\nGameplay Overview\t\n• Explore four vacation locations ✈️\n• Create stories with 34 characters 👨‍👩‍👧\n• Visit the airport, hotel, beach, and boardwalk 🏖️\n• Discover hidden treasures and island mysteries 🗝️\n• Enjoy unlimited creative role-playing ✨\n\nMain Features\t\n• Four fully interactive vacation locations 🌴\n• 34 unique characters 👥\n• Airport with airplane cockpit ✈️\n• Hotel, beach, sightseeing, and shopping 🏨\n• Hidden treasures and island secrets 🏝️\n• Endless sandbox storytelling 🎭\n\nWhy You’ll Love It\t\n• Play free online instantly 🎮\n• Unlimited creative storytelling ✨\n• Explore beautiful vacation destinations 🌴\n• Family-friendly sandbox gameplay ❤️\n• Perfect for unblocked games 🏫"
-    }
-  ]
-  </script>
+[
+  {
+    "title": "Toca Boca Life City",
+    "embed": "https://www.madkidgames.com/full/toca-boca-life-city"
+  }
+]
+</script>
   <script>
     'use strict';
+    // If a preview blocks navigation, stop the loader and keep manual links.
+    setTimeout(() => {
+      document.getElementById('spinner').hidden = true;
+      document.getElementById('status').textContent = 'Still on this page? Select Open game, or open in a new tab. The online game needs a browser with WebGL support.';
+    }, 4000);
     try {
       const games = JSON.parse(document.getElementById('games-json').textContent);
       const game = games[0];
@@ -50,6 +53,7 @@
       // Direct navigation avoids relying on cross-site iframe embedding.
       window.location.replace(url.href);
     } catch {
+      document.getElementById('spinner').hidden = true;
       document.getElementById('status').textContent = 'Select Open game to continue.';
     }
   </script>
