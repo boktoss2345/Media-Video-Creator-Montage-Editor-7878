@@ -1,1 +1,61 @@
-ssssss
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10121a">
+  <title>My Town Car Repair Mechanic</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; min-height: 100%; background: #10121a; color: #fff; font-family: system-ui,sans-serif; }
+    main { min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; padding: 24px; text-align: center; }
+    .spinner { width: 38px; height: 38px; border: 3px solid #ffffff24; border-top-color: #70d9fa; border-radius: 50%; animation: spin 1s linear infinite; }
+    p { margin: 0; line-height: 1.5; }
+    a { color: #10121a; background: #70d9fa; text-decoration: none; padding: 12px 20px; border-radius: 10px; font-weight: 700; }
+    a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="spinner" class="spinner" aria-hidden="true"></div>
+    <p id="status" role="status">Opening My Town Car Repair Mechanic…</p>
+    <a id="openGame" href="https://www.madkidgames.com/full/my-town-car-repair-mechanic" target="_top">Open game</a>
+    <a href="https://www.madkidgames.com/full/my-town-car-repair-mechanic" target="_blank" rel="noopener noreferrer">Open in a new tab ↗</a>
+    <noscript><p>Select Open game to continue.</p></noscript>
+  </main>
+  <!-- The JSON stays in this file. The first game opens directly in the same tab. -->
+  <script id="games-json" type="application/json">
+[
+  {
+    "title": "My Town Car Repair Mechanic",
+    "embed": "https://www.madkidgames.com/full/my-town-car-repair-mechanic"
+  }
+]
+</script>
+  <script>
+    'use strict';
+    // If a preview blocks navigation, stop the loader and keep manual links.
+    setTimeout(() => {
+      document.getElementById('spinner').hidden = true;
+      document.getElementById('status').textContent = 'Still on this page? Select Open game, or open in a new tab. The online game needs a browser with WebGL support.';
+    }, 4000);
+    try {
+      const games = JSON.parse(document.getElementById('games-json').textContent);
+      const game = games[0];
+      const raw = String(game.embed || '').trim();
+      const markdown = raw.match(/^\[[\s\S]*?\]\((https?:\/\/[^\s]+)\)$/i);
+      const url = new URL(markdown ? markdown[1] : raw);
+      if (!['https:', 'http:'].includes(url.protocol)) throw new Error('Invalid game URL');
+      document.title = game.title || 'Online Game';
+      document.getElementById('openGame').href = url.href;
+      // Direct navigation avoids relying on cross-site iframe embedding.
+      window.location.replace(url.href);
+    } catch {
+      document.getElementById('spinner').hidden = true;
+      document.getElementById('status').textContent = 'Select Open game to continue.';
+    }
+  </script>
+</body>
+</html>
